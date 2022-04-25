@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Hello there
-published: false
+published: true
 ---
 
 This is a pretty basic blog made with Jekyll. 
