@@ -1,5 +1,6 @@
 ---
 published: true
+title: Hello There
 layout: post
 ---
 ## My first post
