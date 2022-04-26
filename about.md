@@ -13,4 +13,4 @@ If you want to offer me an internship at your company, please contact me.
 
 ### Contact me
 
-[email@domain.com](mailto:cyril.blin@epita.fr)
+[cyril.blin@epita.fr](mailto:cyril.blin@epita.fr)
