@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Git & Docker
-published: false
+published: true
 ---
 
 Today and yesterday I went back to learning how to use Docker. 
