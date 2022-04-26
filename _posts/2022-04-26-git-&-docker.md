@@ -1,8 +1,8 @@
 ---
-published: false
 layout: post
+title: Git & Docker
+published: false
 ---
-## Git & Docker
 
 Today and yesterday I went back to learning how to use Docker. 
 
