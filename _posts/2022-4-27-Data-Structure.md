@@ -1,11 +1,13 @@
 ---
 layout: post
 title: Data Structure
-published: false
+published: true
 ---
 I would like to dedicate a series of post to data structures. 
 
 We will discuss their properties, their assiocated methods, their use cases. We will see my personal generic implementation of the data structures in C and understand it.
+
+You can take a peek at the repository with all my code [here](https://github.com/liryc116/algoc)
 
 Some details may come later as this series progress.
 
