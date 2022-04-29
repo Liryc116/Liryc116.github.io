@@ -54,3 +54,5 @@ b=4
 
 So if we wanted to insert an int we would just allocate it's first byte.  
 The solution is to pass the data size as an argument when adding elements to the structure.
+
+That's it for this article. We'll meet again soon for more data structures.
