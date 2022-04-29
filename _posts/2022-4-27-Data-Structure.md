@@ -44,7 +44,7 @@ But this doesn't give the size of the effective element we want to copy.
 
 For example let's try the following code:
 
-```  
+```c
 void *a = malloc(sizeof(int));
 int *b = malloc(sizeof(int));
 printf("a = %lu\nb = %lu\n", sizeof(*a), sizeof(*b));  
