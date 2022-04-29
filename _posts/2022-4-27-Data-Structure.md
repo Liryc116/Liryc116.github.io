@@ -43,11 +43,13 @@ The initial guess would be to use `sizeof(void *)`.
 But this doesn't give the size of the effective element we want to copy.
 
 For example let's try the following code:
-```
+
+```  
 void *a = malloc(sizeof(int));
 int *b = malloc(sizeof(int));
-printf("a = %lu\nb = %lu\n", sizeof(*a), sizeof(*b));
+printf("a = %lu\nb = %lu\n", sizeof(*a), sizeof(*b));  
 ```
+
 The result is:
 >a=1  
 b=4
