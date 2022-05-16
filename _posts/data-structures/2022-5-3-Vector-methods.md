@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Vectors methods
-published: false
+published: true
 ---
 
 Today's topic is the methods of vectors. 
@@ -87,5 +87,5 @@ This is the pop.
 If the size is 0 we just send `NULL`. 
 Else we decrement the size, memorize the pointer and change the stored pointer (this last part is not mandatory).
 Since we allocated memory in the push and we aren't asking for a free, we just return the poped element.
-The caller MUST to free the returned element.
-As detailled [here](https://liryc116.github.io/Vectors-definitions/) reducing the allocated size to `v->data` is not mandatory. 
+The caller MUST free the returned element.
+As detailled [here](https://liryc116.github.io/Vectors-structure/) reducing the allocated size to `v->data` is not mandatory. 
