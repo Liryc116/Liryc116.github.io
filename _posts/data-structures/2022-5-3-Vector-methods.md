@@ -51,7 +51,9 @@ There are few methods on vectors:
 - insert, insert at the index in parameter
 - remove, deletes at the index in parameter
 
-Push and pop are very similar to insert and remove, we just need to shift the elements in the latters.  
+Push and pop are very similar to insert and remove, we just need to shift the elements in the latters. 
+Also the complexity changes. 
+It is simply O(1) for push and pop but O(n) for insert and remove.
 
 ```c
 void vector_push(struct vector *v, void *x, size_t elm_size)
@@ -88,4 +90,63 @@ If the size is 0 we just send `NULL`.
 Else we decrement the size, memorize the pointer and change the stored pointer (this last part is not mandatory).
 Since we allocated memory in the push and we aren't asking for a free, we just return the poped element.
 The caller MUST free the returned element.
-As detailled [here](https://liryc116.github.io/Vectors-structure/) reducing the allocated size to `v->data` is not mandatory. 
+As detailled [here](https://liryc116.github.io/Vectors-structure/) reducing the allocated size to `v->data` is not as important so you don't have to do it. 
+
+We can add the method `get` which returns a pointer to the n-th element in the vector. 
+We want to add this method so we can handle the case where n is bigger than the vector size. 
+This way the function is more "client" like.
+
+Here's the code for this:
+
+```c
+void* vector_get(struct vector *v, size_t i)
+{
+    if (i < v->size)
+        return v->data[i];
+
+    return NULL;
+}
+```
+
+We can add two new method heavily based on push and pop.
+They are called insert and remove. 
+They take the same input as push and pop (respectivelly) and an index.
+Thus we insert or remove at a certain place and not at the end.
+
+```c
+void vector_insert(struct vector *v, void *x, size_t elm_size, size_t i)
+{
+    if (i<=v->size)
+    {
+		if (v->capacity <= v->size)
+			double_capacity(v);
+
+        for(size_t n = v->size; n>=i && n!=0; n--)
+            v->data[n] = v->data[n-1];
+
+        v->data[i] = malloc(elm_size);
+        memcpy(v->data[i], x, elm_size);
+        v->size+=1;
+    }
+}
+
+void* vector_remove(struct vector *v, size_t i)
+{
+	if (i < v->size)
+	{
+		void *x = v->data[i];
+        for(size_t n = i+1; n<v->size; n++)
+            v->data[n-1] = v->data[n];
+		v->size -= 1;
+		return x;
+	}
+
+	return NULL;
+}
+```
+
+
+We shift all the elements to left or the right on top of the pop/push code.
+
+That will be all for this article.
+I hope you understand the interest of vectors and that I was clear in my explanations.
