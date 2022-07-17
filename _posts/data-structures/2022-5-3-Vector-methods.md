@@ -71,7 +71,7 @@ We copy the data from the element we insert to the space we allocated.
 Finally, we increment the size.
 
 ```c
-void* vector_pop(struct vector *v)
+void *vector_pop(struct vector *v)
 {
     if(v->size>0)
     {
@@ -99,7 +99,7 @@ This way the function is more "client" like.
 Here's the code for this:
 
 ```c
-void* vector_get(struct vector *v, size_t i)
+void *vector_get(struct vector *v, size_t i)
 {
     if (i < v->size)
         return v->data[i];
